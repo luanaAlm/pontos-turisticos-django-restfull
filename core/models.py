@@ -1,8 +1,10 @@
 from django.db import models
 from django.db import models
+from django.db.models.deletion import CASCADE
 from atracoes.models import Atracao
 from comentarios.models import Comentario
 from avaliacoes.models import Avaliacao
+from enderecos.models import Endereco
 
 
 class PontoTuristico(models.Model):
@@ -12,6 +14,7 @@ class PontoTuristico(models.Model):
     atracoes = models.ManyToManyField(Atracao)
     comentarios = models.ManyToManyField(Comentario)
     avaliacoes = models.ManyToManyField(Avaliacao)
+    enderecos = models.ForeignKey(Endereco, on_delete=CASCADE)
 
     def __str__(self) -> str:
         return self.nome
