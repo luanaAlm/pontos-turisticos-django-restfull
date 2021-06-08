@@ -1,6 +1,8 @@
+from core.models import PontoTuristico
+
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
-from core.models import PontoTuristico
+from rest_framework.decorators import action
 from .serializers import PontoTuristicoSerializer
 
 
@@ -30,4 +32,8 @@ class PontoTuristicoViewSet(ModelViewSet):
 
     # para alguns campos
     def partial_update(self, request, *args, **kwargs):
+        pass
+
+    @action(methods=['get'], detail=False)
+    def teste(self, request, pk=None):
         pass
