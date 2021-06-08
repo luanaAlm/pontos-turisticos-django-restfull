@@ -12,4 +12,4 @@ class AtracaoViewSet(ModelViewSet):
     queryset = Atracao.objects.all()
     serializer_class = AtracaoSerializer
     filter_backends = [DjangoFilterBackend, ]
-    search_fields = ['nome', 'descricao']
+    filterset_fields = ['nome', 'descricao']
