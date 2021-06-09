@@ -6,12 +6,19 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
 from .serializers import PontoTuristicoSerializer
 from rest_framework.filters import SearchFilter
+# autorização
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 
 
 class PontoTuristicoViewSet(ModelViewSet):
     serializer_class = PontoTuristicoSerializer
     # filtro
     filter_backends = [SearchFilter]
+    # autorização
+    permission_classes = [IsAuthenticated]
+    authentication_classes = (TokenAuthentication,)
+
     search_fields = ['nome', 'descricao']
     lookup_field = 'nome'
 
