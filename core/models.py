@@ -19,5 +19,10 @@ class PontoTuristico(models.Model):
     foto = models.ImageField(
         upload_to='pontos_turisticos', null=True, blank=True)
 
+    # 2forma
+    @property
+    def descricao_completa2(self):
+        return '%s - %s' % (self.nome, self.descricao)
+
     def __str__(self) -> str:
         return self.nome
