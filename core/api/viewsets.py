@@ -16,8 +16,8 @@ class PontoTuristicoViewSet(ModelViewSet):
     # filtro
     filter_backends = [SearchFilter]
     # autorização
-    permission_classes = [DjangoModelPermissions]
-    authentication_classes = (TokenAuthentication,)
+    #permission_classes = [DjangoModelPermissions]
+    #authentication_classes = (TokenAuthentication,)
 
     search_fields = ['nome', 'descricao']
     lookup_field = 'nome'
