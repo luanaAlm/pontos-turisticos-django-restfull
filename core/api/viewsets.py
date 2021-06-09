@@ -7,7 +7,7 @@ from rest_framework.decorators import action
 from .serializers import PontoTuristicoSerializer
 from rest_framework.filters import SearchFilter
 # autorização
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import DjangoModelPermissions, IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 
 
@@ -16,7 +16,7 @@ class PontoTuristicoViewSet(ModelViewSet):
     # filtro
     filter_backends = [SearchFilter]
     # autorização
-    permission_classes = [IsAuthenticated]
+    permission_classes = [DjangoModelPermissions]
     authentication_classes = (TokenAuthentication,)
 
     search_fields = ['nome', 'descricao']
