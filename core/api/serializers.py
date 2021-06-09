@@ -1,5 +1,3 @@
-from re import T
-from atracoes.models import Atracao
 from rest_framework.serializers import ModelSerializer
 from core.models import PontoTuristico
 from atracoes.api.serializers import AtracaoSerializer
